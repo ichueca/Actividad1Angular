@@ -1,0 +1,13 @@
+<div class="card">
+    <ng-container *ngIf="noticia.foto != null; else elseTemplate">
+      <img class="card-img-top" [src]="noticia.foto" alt="Card image cap">  
+    </ng-container>
+    <ng-template #elseTemplate>
+      <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png" alt="Card image cap">
+    </ng-template>
+    <div class="card-body">
+      <h5 class="card-title">{{noticia.titulo}}</h5>
+      <p [innerHTML]="noticia.texto"></p>
+      <button class="btn btn-primary" (click)="volver()">Volver</button>
+    </div>
+  </div>

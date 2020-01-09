@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+    <ng-container *ngIf="noticia.foto != null; else elseTemplate">
+      <img class="card-img-top" [src]="noticia.foto" alt="Card image cap">  
+    </ng-container>
+    <ng-template #elseTemplate>
+      <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png" alt="Card image cap">
+    </ng-template>
+    
+    
+    
+    <div class="card-body">
+      <h5 class="card-title">{{noticia.titulo}} {{pos}}</h5>
+      <a [routerLink]="[ '/detalle', pos ]" class="btn btn-primary">Ver Noticia</a>
+      <div class="mt-3 card-footer text-muted">
+        {{noticia.categoria}}
+      </div>
+    </div>
+  </div>
